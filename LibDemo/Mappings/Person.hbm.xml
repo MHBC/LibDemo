@@ -4,8 +4,8 @@
                    assembly="LibDemo">
   <class name="Person" table="Person">
     <id name="Id">
-      <column name="PersonID" not-null="true"/>
-      <generator class="guid"/>
+      <column name="PersonID" not-null="true" unique="true"/>
+      <generator class="increment"/>
     </id>
 
     <property name="Name" not-null="true"/>

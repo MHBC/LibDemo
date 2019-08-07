@@ -8,6 +8,6 @@ namespace LibDemo.Domain
 {
     public abstract class Entity
     {
-        public virtual Guid Id { get; set; }
+        public virtual int Id { get; set; }
     }
 }

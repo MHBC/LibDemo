@@ -9,6 +9,10 @@ namespace LibDemo.Test
     [TestClass]
     public class UnitTest
     {
+        /// <summary>
+        /// Method for building a new database automatically
+        /// No need to run if one with test data already exists
+        /// </summary>
         [TestMethod]
         public void BuildTest()
         {
@@ -20,8 +24,8 @@ namespace LibDemo.Test
             config.Configure();
             ISessionFactory sessionFactory = config.BuildSessionFactory();
             sessionFactory.Close();
-
         }
+        
         [TestMethod]
         public void TestMethod1()
         {
