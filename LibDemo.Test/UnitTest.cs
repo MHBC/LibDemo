@@ -3,6 +3,7 @@ using LibDemo;
 using LibDemo.Domain;
 using NHibernate;
 using NHibernate.Cfg;
+using LibDemo.Manager;
 
 namespace LibDemo.Test
 {
@@ -29,22 +30,38 @@ namespace LibDemo.Test
         }
         
         [TestMethod]
-        public void TestMethod1()
+        public void Initialization()
         {
-            ISession session = NHibernateHelper.GetSession();
-            using (ITransaction tx = session.BeginTransaction())
+            DataCRUD.Create<Department>(new Department()
             {
-                var man = new Person()
-                {
-                    Account = "TestAccount",
-                    Password = "123456",
-                    FamilyName = "Chiang",
-                    FirstName = "KaiShek",
-                    JobTitle = "DepartLeader"
-                };
-                session.Save(man);
-                tx.Commit();
-            }
+                DepartmentName = "管理",
+            });
+            DataCRUD.Create<Department>(new Department()
+            {
+                DepartmentName = "技术",
+            });
+            DataCRUD.Create<Department>(new Department()
+            {
+                DepartmentName = "市场",
+            });
+            DataCRUD.Create<Department>(new Department()
+            {
+                DepartmentName = "后勤",
+            });
+            DataCRUD.Create<Community>(new Community()
+            {
+                CommunityName = "工会",
+            });
+            DataCRUD.Create<Admin>(new Admin()
+            {
+                Account="Admin",
+                Password="Admin",
+                FamilyName="Admin",
+                FirstName="Admin",
+                JobTitle="Admin",
+                AdminAccount="admin",
+                AdminPassword="123456"
+            });
         }
     }
 }
