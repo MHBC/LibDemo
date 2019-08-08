@@ -97,8 +97,8 @@
     <Content Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Mappings\Address.xml" />
-    <Content Include="Mappings\Community.xml" />
+    <EmbeddedResource Include="Mappings\Address.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Community.hbm.xml" />
     <EmbeddedResource Include="Mappings\Department.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

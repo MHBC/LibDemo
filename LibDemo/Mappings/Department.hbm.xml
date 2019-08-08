@@ -2,6 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    namespace="LibDemo.Domain"
                    assembly="LibDemo">
+  
   <class name="Department" table="Department">
     <!--ID-->
     <id name="Id">
@@ -11,7 +12,10 @@
     <!--Basic Information-->
     <property name="DepartmentName" not-null="true"/>
     <!--Relation with other tables-->
-
+    <set name="Persons" cascade="all">
+      <key column="DepartID"/>
+      <one-to-many class="Person"/>
+    </set>
   </class>
 
 </hibernate-mapping>

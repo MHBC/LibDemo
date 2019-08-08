@@ -2,6 +2,7 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    namespace="LibDemo.Domain"
                    assembly="LibDemo">
+  
   <class name="Person" table="Person">
     <!--ID-->
     <id name="Id">
@@ -15,8 +16,25 @@
     <property name="FirstName" not-null="true"/>
     <property name="JobTitle"/>
     <!--Relation with other tables-->
-
+    <one-to-one name="ResidentialAddress" class="Address" 
+                cascade="all" property-ref="PersonInfo"/>
+    <many-to-one name="DepartmentInfo" class="Department" 
+                 column="DepartID"/>
+    <set name="Communities" table="Person_Community" 
+         cascade="all">
+      <key>
+        <column name="PersonID"/>
+      </key>
+      <many-to-many class="Community">
+        <column name="CommunityID"/>
+      </many-to-many>
+    </set>
     <!--Subclass-->
+    <joined-subclass name="Admin">
+      <key column="Id"/>
+      <property name="AdminAccount"/>
+      <property name="AdminPassword"/>
+    </joined-subclass>
   </class>
   
 </hibernate-mapping>

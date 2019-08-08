@@ -34,11 +34,15 @@ namespace LibDemo.Test
             ISession session = NHibernateHelper.GetSession();
             using (ITransaction tx = session.BeginTransaction())
             {
-                var princess = new Person()
+                var man = new Person()
                 {
-                    
+                    Account = "TestAccount",
+                    Password = "123456",
+                    FamilyName = "Chiang",
+                    FirstName = "KaiShek",
+                    JobTitle = "DepartLeader"
                 };
-                session.Save(princess);
+                session.Save(man);
                 tx.Commit();
             }
         }
