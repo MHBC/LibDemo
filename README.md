@@ -1,10 +1,21 @@
 # README
 
-This is a demo project created for learning of NHibernate.
+为学习NHibernate创建的Demo。使用数据库为SQLite。
 
 ## DevDiary
 
 ### V0.1 190807
 
-- Basic structure created.
-- Build and Add data method tested (not generated into lib yet).
+- 基本框架
+- 测试根据映射自动生成数据库功能
+
+### V0.2 190808
+
+- 确立了基本的数据类和映射
+- 测试了数据库的自动生成和基本的数据写入
+
+### V0.3 Beta 190808
+
+- 完成了基本的CRUD方法
+- 正在封装CRUD方法为可调用的API
+

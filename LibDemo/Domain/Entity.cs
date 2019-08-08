@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibDemo.Domain
 {
     /// <summary>
-    /// Basic Class with ID defined
+    /// 基类，定义ID
     /// </summary>
     public abstract class Entity
     {

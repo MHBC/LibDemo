@@ -4,6 +4,9 @@ using NHibernate;
 using NHibernate.Cfg;
 namespace LibDemo
 {
+    /// <summary>
+    /// 用于创建会话工厂的类，设为密封类
+    /// </summary>
     public sealed class NHibernateHelper
     {
         private static ISessionFactory _sessionFactory;

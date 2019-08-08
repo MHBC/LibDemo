@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibDemo.Domain
 {
     /// <summary>
-    /// Address
+    /// 住址
     /// </summary>
     public class Address : Entity
     {

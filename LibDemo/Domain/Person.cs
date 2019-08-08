@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibDemo.Domain
 {
     /// <summary>
-    /// Personal Info
+    /// 个人信息，账号、密码、姓、名均为非空
     /// </summary>
     public class Person : Entity
     {
@@ -24,8 +24,7 @@ namespace LibDemo.Domain
     }
 
     /// <summary>
-    /// Admin Info as a subclass of Person
-    /// Use joined-subclass mapping strategy
+    /// 管理员为个人的子类，并有另外的管理员账号密码
     /// </summary>
     public class Admin : Person
     {

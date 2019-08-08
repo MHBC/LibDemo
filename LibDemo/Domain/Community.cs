@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibDemo.Domain
 {
     /// <summary>
-    /// Community
+    /// 社团，含有一个成员名录
     /// </summary>
     public class Community : Entity
     {

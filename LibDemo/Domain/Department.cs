@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LibDemo.Domain
 {
     /// <summary>
-    /// Department
+    /// 部门，含有一个员工名录
     /// </summary>
     public class Department : Entity
     {
