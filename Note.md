@@ -3,7 +3,31 @@
 ## Lib Structure
 
 - **LibDemo**
-  - **Domain** Data Classes
-  - **Mappings** Mapping Xml files that link the table to data classes
-  - **References** NHibernate and SQLite for .NET from Nuget
-- **LibDemo.Test** Domain for coding unit tests
+  - **Domain** 存储数据类的域
+  - **Mappings** 定义映射的Xml文件
+  - **Data** 可供调用的CRUD API
+  - **DataMethod** 可供调用的数据处理方法，封装Data中的CRUD API
+- **LibDemo.Test** 单元测试
+- **LibDemo.Program** 未来计划：使用LibDemo库开发的程序
+
+## Goal
+
+- 一个存储某单位个人信息及账号密码的数据库。
+  - 管理员可以进行CRUD操作
+  - 个人用户可以注册、更改个人信息及向管理员发送离职销号请求
+  - 有各部门列表，供管理员快速调出个人信息
+
+## Class
+
+- 个人 | ID，账号，密码，姓，名，职务，地址（可空），部门ID，社区ID
+- 地址 | ID，地址信息，邮编，个人ID
+- 管理员（个人子类） | 管理员账号，管理员密码
+- 部门 | ID，部门名
+- 社区 | ID，社区组织名（工会，文艺组，体育组）
+
+### 关系
+
+- 部门-个人：单对多
+- 个人-地址：单对单
+- 个人-管理员：继承
+- 个人-社区：多对多

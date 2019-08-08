@@ -2,21 +2,17 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                    namespace="LibDemo.Domain"
                    assembly="LibDemo">
-  <class name="Person" table="Person">
+  <class name="Address" table="Address">
     <!--ID-->
     <id name="Id">
-      <column name="PersonID" not-null="true" unique="true"/>
+      <column name="ID" not-null="true" unique="true"/>
       <generator class="increment"/>
     </id>
     <!--Basic Information-->
-    <property name="Account" not-null="true"/>
-    <property name="Password" not-null="true"/>
-    <property name="FamilyName" not-null="true"/>
-    <property name="FirstName" not-null="true"/>
-    <property name="JobTitle"/>
+    <property name="AddressInfo"/>
+    <property name="PostCode"/>
     <!--Relation with other tables-->
 
-    <!--Subclass-->
   </class>
-  
+
 </hibernate-mapping>

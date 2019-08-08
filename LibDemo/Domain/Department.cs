@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 namespace LibDemo.Domain
 {
     /// <summary>
-    /// Basic Class with ID defined
+    /// Department
     /// </summary>
-    public abstract class Entity
+    public class Department : Entity
     {
-        public virtual int Id { get; set; }
+        public virtual string DepartmentName { get; set; }
+        public virtual ICollection<Person> Persons { get; set; }
     }
 }

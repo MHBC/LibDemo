@@ -6,13 +6,30 @@ using System.Threading.Tasks;
 
 namespace LibDemo.Domain
 {
-    public class Person: Entity
+    /// <summary>
+    /// Personal Info
+    /// </summary>
+    public class Person : Entity
     {
-        public virtual string Name { get; set; }
-        public virtual string Job { get; set; }
-        /// <summary>
-        /// M for male, F for female
-        /// </summary>
-        public virtual char Sex { get; set; }
+        public virtual string Account { get; set; }
+        public virtual string Password { get; set; }
+        public virtual string FamilyName { get; set; }
+        public virtual string FirstName { get; set; }
+        public virtual string JobTitle { get; set; }
+
+        // Connection to other tables
+        public virtual Address ResidentialAddress { get; set; }
+        public virtual Department DepartmentInfo { get; set; }
+        public virtual ICollection<Community> Communities { get; set; }
+    }
+
+    /// <summary>
+    /// Admin Info as a subclass of Person
+    /// Use joined-subclass mapping strategy
+    /// </summary>
+    public class Admin : Person
+    {
+        public virtual string AdminAccount { get; set; }
+        public virtual string AdminPassword { get; set; }
     }
 }

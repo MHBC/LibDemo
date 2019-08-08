@@ -16,6 +16,8 @@ namespace LibDemo.Test
         [TestMethod]
         public void BuildTest()
         {
+            // Open a new sessionfactory with specialized configuration
+            // to create a new database. Name and path are set in hibernate.cfg.xml
             var config = new Configuration();
             config.DataBaseIntegration(db =>
             {
@@ -34,9 +36,7 @@ namespace LibDemo.Test
             {
                 var princess = new Person()
                 {
-                    Name = "ChiangKaiShek",
-                    Sex = 'F',
-                    Job = "Doctor"
+                    
                 };
                 session.Save(princess);
                 tx.Commit();
